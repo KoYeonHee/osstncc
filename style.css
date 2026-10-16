@@ -205,3 +205,17 @@ main,
     height: 34px !important;
   }
 }
+/* 메인 화면 글자와 아이콘 왼쪽 정렬 */
+.hero-inner .hero-tags {
+  text-align: left !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.hero-inner .hero-buttons {
+  justify-content: flex-start !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
