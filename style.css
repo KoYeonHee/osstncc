@@ -266,3 +266,35 @@ main,
   padding-left: 0 !important;
   transform: none !important;
 }
+/* 찾아오시는 길 약도 이미지 */
+.map-image-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #d6b56d;
+  line-height: 0;
+}
+
+.directions-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.map-image-link:hover .directions-map {
+  opacity: 0.96;
+}
+
+@media (max-width: 768px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directions-map {
+    width: 100%;
+    height: auto;
+  }
+}
