@@ -239,3 +239,19 @@ main,
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
+
+/* 메인 문구와 아이콘 버튼 왼쪽 정렬 */
+.hero-inner .hero-tags,
+.hero-inner .hero-buttons {
+  align-self: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  transform: none !important;
+}
+
+.hero-inner .hero-buttons {
+  justify-content: flex-start !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  position: static !important;
+}
