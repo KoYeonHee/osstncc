@@ -219,3 +219,23 @@ main,
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
+/* 제목 아래 글자와 아이콘 정렬 최종 수정 */
+.hero-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.hero-inner .hero-tags {
+  align-self: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.hero-inner .hero-buttons {
+  align-self: flex-start !important;
+  justify-content: flex-start !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
