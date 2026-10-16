@@ -76,3 +76,132 @@
   height: 34px !important;
   flex-shrink: 0 !important;
 }
+
+/* 메인 화면 검정 배경 및 아이콘 배치 수정 */
+
+  background: #000 !important;
+  background-image: none !important;
+}
+
+.hero::before,
+.hero::after,
+.hero-overlay {
+  background: #000 !important;
+  background-image: none !important;
+}
+
+.hero-inner {
+  background: transparent !important;
+}
+
+.hero-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 18px !important;
+  margin-top: 28px !important;
+}
+
+.hero-buttons a {
+  width: 96px !important;
+  height: 96px !important;
+  min-width: 96px !important;
+  min-height: 96px !important;
+  max-width: 96px !important;
+  max-height: 96px !important;
+  flex: 0 0 96px !important;
+  border-radius: 50% !important;
+  background: #080808 !important;
+  border: 1px solid #d8b66a !important;
+  box-sizing: border-box !important;
+}
+
+.hero-buttons a svg {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    gap: 10px !important;
+  }
+
+  .hero-buttons a {
+    width: 78px !important;
+    height: 78px !important;
+    min-width: 78px !important;
+    min-height: 78px !important;
+    max-width: 78px !important;
+    max-height: 78px !important;
+    flex: 0 0 78px !important;
+  }
+
+  .hero-buttons a svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+
+/* 메인 영역 전체 검정색 통일 */
+html,
+body,
+main,
+#home,
+
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.hero,
+.hero::before,
+.hero::after,
+.hero-overlay,
+.hero-inner {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.hero-buttons {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  margin-top: 24px !important;
+  gap: 18px !important;
+}
+
+.hero-tags {
+  margin-bottom: 0 !important;
+  text-align: center !important;
+}
+
+.hero-buttons a {
+  width: 96px !important;
+  height: 96px !important;
+  flex: 0 0 96px !important;
+}
+
+.hero-buttons a svg {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    gap: 10px !important;
+  }
+
+  .hero-buttons a {
+    width: 78px !important;
+    height: 78px !important;
+    flex: 0 0 78px !important;
+  }
+
+  .hero-buttons a svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
