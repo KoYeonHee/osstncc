@@ -255,3 +255,14 @@ main,
   padding-left: 0 !important;
   position: static !important;
 }
+/* 메인 화면 왼쪽 정렬 최종 적용 */
+.hero-inner .hero-tags,
+.hero-inner .hero-buttons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  transform: none !important;
+}
