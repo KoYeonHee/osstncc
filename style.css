@@ -3,3 +3,76 @@
 .room-card .photo img{width:100%;height:100%;object-fit:cover;display:block}
 
 .room-card{cursor:pointer;transition:transform .2s,box-shadow .2s}.room-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0002}.room-card:focus{outline:2px solid #c99b4c;outline-offset:3px}.room-modal{display:none;position:fixed;inset:0;z-index:999}.room-modal.open{display:block}.room-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(3px)}.room-modal-box{position:relative;width:min(920px,92vw);max-height:92vh;overflow:auto;margin:4vh auto;background:#fff;border-radius:16px;padding:24px;box-shadow:0 25px 70px #0006}.modal-close{position:absolute;right:16px;top:10px;border:0;background:#171717;color:#fff;width:38px;height:38px;border-radius:50%;font-size:27px;line-height:1;cursor:pointer}.modal-head{padding:8px 45px 18px 4px}.modal-head span{font-size:11px;letter-spacing:4px;color:#b78938}.modal-head h2{margin:4px 0;font-size:30px}.modal-image{display:block;width:100%;height:auto;border-radius:10px}.modal-actions{display:flex;gap:10px;justify-content:center;padding-top:18px}.outline-dark{border:1px solid #222;color:#222}.modal-open{overflow:hidden}
+
+/* 메인 화면 검정 배경 및 아이콘 배치 */
+.hero {
+  background: #000 !important;
+  background-image: none !important;
+}
+
+.hero-overlay {
+  background: #000 !important;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px !important;
+}
+
+.hero-buttons a {
+  width: 82px !important;
+  height: 82px !important;
+  flex-shrink: 0;
+}
+
+.hero-buttons a svg {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-buttons a {
+    width: 72px !important;
+    height: 72px !important;
+  }
+}
+
+/* 메인 배경 검정색 통일 */
+.hero,
+.hero::before,
+.hero::after,
+.hero-overlay,
+.hero-inner {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+/* 아이콘을 정원으로 유지 */
+.hero-buttons a {
+  width: 82px !important;
+  min-width: 82px !important;
+  max-width: 82px !important;
+  height: 82px !important;
+  min-height: 82px !important;
+  max-height: 82px !important;
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box !important;
+  border-radius: 50% !important;
+  flex: 0 0 82px !important;
+  padding: 8px !important;
+}
+
+/* 아이콘 크기 통일 */
+.hero-buttons a svg {
+  width: 34px !important;
+  height: 34px !important;
+  flex-shrink: 0 !important;
+}
