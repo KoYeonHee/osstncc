@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  padding: 28px 18px;
+  padding: 30px 16px;
   text-align: center;
   color: white;
   background: #222;
@@ -26,103 +26,73 @@ header h1 { margin: 0 0 8px; font-size: 25px; }
 header p { margin: 0; color: #ddd; }
 
 main {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
   padding: 28px 16px;
 }
 
-h2 { margin: 0 0 18px; }
+h2 { margin: 0 0 10px; }
 
-.rooms {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 26px;
-}
-
-.rooms button {
-  padding: 16px 8px;
-  border: 1px solid #d5c49a;
-  border-radius: 8px;
-  background: white;
-  color: #333;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.rooms button.active,
-.rooms button:hover {
-  background: #343124;
-  color: white;
-  border-color: #343124;
-}
-
-#selected {
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.frame-wrap {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px #00000010;
-}
-
-iframe {
-  display: block;
-  width: 100%;
-  height: 1000px;
-  border: 0;
-  background: white;
-}
-
-.continue-box {
-  margin-top: 18px;
-  padding: 22px 16px;
-  background: white;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.continue-box p {
-  margin: 0 0 14px;
-  color: #555;
-  font-size: 14px;
+.intro {
+  margin: 0 0 22px;
+  color: #666;
   line-height: 1.7;
 }
 
-.continue-button {
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.room {
   display: block;
-  width: 100%;
-  max-width: 520px;
-  margin: auto;
-  padding: 17px 12px;
-  border-radius: 8px;
-  background: #03a85e;
-  color: white;
+  padding: 22px 18px;
+  border: 1px solid #d5c49a;
+  border-radius: 10px;
+  background: white;
+  color: #292929;
   text-decoration: none;
-  text-align: center;
-  font-size: 17px;
+  transition: background .15s;
+}
+
+.room:hover {
+  background: #f5f0e4;
+}
+
+.room strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 19px;
+}
+
+.room span {
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+
+.room em {
+  display: block;
+  margin-top: 17px;
+  color: #96732c;
+  font-size: 15px;
   font-weight: bold;
+  font-style: normal;
 }
 
-.continue-button:hover {
-  background: #02894d;
-}
-
-.fallback {
+.notice {
+  margin-top: 22px;
   padding: 16px;
-  text-align: center;
+  border-radius: 8px;
+  background: #eeeae0;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-.fallback a { color: #1769aa; }
-
-@media (max-width: 650px) {
-  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  iframe { height: 850px; }
-  main { padding: 20px 12px; }
+@media (max-width: 600px) {
+  main { padding: 22px 12px; }
+  .rooms { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -134,81 +104,66 @@ iframe {
 </header>
 
 <main>
-  <h2>회의실 선택</h2>
+  <h2>회의실 예약</h2>
+  <p class="intro">
+    예약하실 회의실을 선택하면 네이버 예약 페이지로 이동합니다.
+    날짜와 시간을 선택한 뒤 예약을 진행해 주세요.
+  </p>
 
-  <div class="rooms" id="rooms">
-    <button class="active" data-room="201호" data-id="4097402">201호 · 24인실</button>
-    <button data-room="202호" data-id="4097407">202호 · 8인실</button>
-    <button data-room="203호" data-id="4097410">203호 · 16인실</button>
-    <button data-room="204호" data-id="4097417">204호 · 20인실</button>
-    <button data-room="205호" data-id="4097426">205호 · 12인실</button>
-    <button data-room="206호" data-id="4097427">206호 · 16인실</button>
-    <button data-room="207호" data-id="4097429">207호 · 프리미엄</button>
-    <button data-room="비상주 공유오피스" data-id="8150750">비상주 공유오피스</button>
-  </div>
+  <div class="rooms">
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097402">
+      <strong>201호 · 24인실</strong>
+      <span>시간당 132,000원</span>
+      <em>예약하기 →</em>
+    </a>
 
-  <div id="selected">201호 예약</div>
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097407">
+      <strong>202호 · 8인실</strong>
+      <span>시간당 35,200원</span>
+      <em>예약하기 →</em>
+    </a>
 
-  <div class="frame-wrap">
-    <iframe
-      id="bookingFrame"
-      title="네이버 예약 화면"
-      src="https://m.booking.naver.com/booking/10/bizes/585397/items/4097402?area=plt&amp;lang=ko&amp;map-search=1&amp;service-target=map-pc&amp;theme=place"
-      allow="payment">
-    </iframe>
-  </div>
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097410">
+      <strong>203호 · 16인실</strong>
+      <span>시간당 70,400원</span>
+      <em>예약하기 →</em>
+    </a>
 
-  <div class="continue-box">
-    <p>
-      예약 화면에서 다음 단계로 진행되지 않는 경우<br>
-      아래 버튼을 눌러 네이버 예약에서 계속 진행해 주세요.
-    </p>
-    <a
-      id="continueBooking"
-      class="continue-button"
-      href="https://booking.naver.com/booking/10/bizes/585397/items/4097402"
-      target="_blank"
-      rel="noopener noreferrer">
-      네이버에서 예약 계속하기 ↗
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097417">
+      <strong>204호 · 20인실</strong>
+      <span>시간당 110,000원</span>
+      <em>예약하기 →</em>
+    </a>
+
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097426">
+      <strong>205호 · 12인실</strong>
+      <span>시간당 52,800원</span>
+      <em>예약하기 →</em>
+    </a>
+
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097427">
+      <strong>206호 · 16인실</strong>
+      <span>시간당 88,000원</span>
+      <em>예약하기 →</em>
+    </a>
+
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/4097429">
+      <strong>207호 · 프리미엄</strong>
+      <span>시간당 77,000원</span>
+      <em>예약하기 →</em>
+    </a>
+
+    <a class="room" href="https://booking.naver.com/booking/10/bizes/585397/items/8150750">
+      <strong>비상주 공유오피스</strong>
+      <span>서비스 및 이용 조건 확인</span>
+      <em>예약하기 →</em>
     </a>
   </div>
 
-  <div class="fallback">
-    예약 화면이 보이지 않으면
-    <a id="directLink"
-       href="https://booking.naver.com/booking/10/bizes/585397/items/4097402"
-       target="_blank"
-       rel="noopener noreferrer">네이버 예약에서 열기</a>
+  <div class="notice">
+    • 예약 가능 날짜와 시간은 네이버 예약 화면에서 확인해 주세요.<br>
+    • 예약은 네이버 예약 페이지에서 진행됩니다.
   </div>
 </main>
-
-<script>
-const buttons = document.querySelectorAll("#rooms button");
-const frame = document.getElementById("bookingFrame");
-const title = document.getElementById("selected");
-const directLink = document.getElementById("directLink");
-const continueBooking = document.getElementById("continueBooking");
-
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const id = button.dataset.id;
-    const room = button.dataset.room;
-
-    const embedUrl =
-      `https://m.booking.naver.com/booking/10/bizes/585397/items/${id}?area=plt&lang=ko&map-search=1&service-target=map-pc&theme=place`;
-
-    const directUrl =
-      `https://booking.naver.com/booking/10/bizes/585397/items/${id}`;
-
-    buttons.forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-
-    title.textContent = `${room} 예약`;
-    frame.src = embedUrl;
-    directLink.href = directUrl;
-    continueBooking.href = directUrl;
-  });
-});
-</script>
 </body>
 </html>
