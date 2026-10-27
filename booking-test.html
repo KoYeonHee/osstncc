@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,28 +7,39 @@
 <title>회의실 예약 | 오송 Stn 컨퍼런스</title>
 <style>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, "Malgun Gothic", sans-serif;
   color: #222;
   background: #f7f7f7;
 }
+
 header {
   padding: 28px 18px;
   text-align: center;
   color: white;
   background: #222;
 }
+
 header h1 { margin: 0 0 8px; font-size: 25px; }
 header p { margin: 0; color: #ddd; }
-main { max-width: 1100px; margin: auto; padding: 28px 16px; }
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 28px 16px;
+}
+
 h2 { margin: 0 0 18px; }
+
 .rooms {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 26px;
 }
+
 .rooms button {
   padding: 16px 8px;
   border: 1px solid #d5c49a;
@@ -37,19 +49,27 @@ h2 { margin: 0 0 18px; }
   font-size: 16px;
   cursor: pointer;
 }
+
 .rooms button.active,
 .rooms button:hover {
   background: #343124;
   color: white;
   border-color: #343124;
 }
-#selected { margin-bottom: 12px; font-size: 20px; font-weight: bold; }
+
+#selected {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .frame-wrap {
   background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px #00000010;
 }
+
 iframe {
   display: block;
   width: 100%;
@@ -57,14 +77,56 @@ iframe {
   border: 0;
   background: white;
 }
-.fallback { padding: 16px; text-align: center; }
+
+.continue-box {
+  margin-top: 18px;
+  padding: 22px 16px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.continue-box p {
+  margin: 0 0 14px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.continue-button {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 17px 12px;
+  border-radius: 8px;
+  background: #03a85e;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.continue-button:hover {
+  background: #02894d;
+}
+
+.fallback {
+  padding: 16px;
+  text-align: center;
+}
+
 .fallback a { color: #1769aa; }
+
 @media (max-width: 650px) {
   .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   iframe { height: 850px; }
+  main { padding: 20px 12px; }
 }
 </style>
 </head>
+
 <body>
 <header>
   <h1>오송 Stn 컨퍼런스</h1>
@@ -73,6 +135,7 @@ iframe {
 
 <main>
   <h2>회의실 선택</h2>
+
   <div class="rooms" id="rooms">
     <button class="active" data-room="201호" data-id="4097402">201호 · 24인실</button>
     <button data-room="202호" data-id="4097407">202호 · 8인실</button>
@@ -95,9 +158,27 @@ iframe {
     </iframe>
   </div>
 
+  <div class="continue-box">
+    <p>
+      예약 화면에서 다음 단계로 진행되지 않는 경우<br>
+      아래 버튼을 눌러 네이버 예약에서 계속 진행해 주세요.
+    </p>
+    <a
+      id="continueBooking"
+      class="continue-button"
+      href="https://booking.naver.com/booking/10/bizes/585397/items/4097402"
+      target="_blank"
+      rel="noopener noreferrer">
+      네이버에서 예약 계속하기 ↗
+    </a>
+  </div>
+
   <div class="fallback">
     예약 화면이 보이지 않으면
-    <a id="directLink" href="https://m.booking.naver.com/booking/10/bizes/585397/items/4097402?area=plt&amp;lang=ko&amp;map-search=1&amp;service-target=map-pc&amp;theme=place" target="_blank" rel="noopener">네이버 예약에서 열기</a>
+    <a id="directLink"
+       href="https://booking.naver.com/booking/10/bizes/585397/items/4097402"
+       target="_blank"
+       rel="noopener noreferrer">네이버 예약에서 열기</a>
   </div>
 </main>
 
@@ -106,18 +187,26 @@ const buttons = document.querySelectorAll("#rooms button");
 const frame = document.getElementById("bookingFrame");
 const title = document.getElementById("selected");
 const directLink = document.getElementById("directLink");
+const continueBooking = document.getElementById("continueBooking");
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const id = button.dataset.id;
     const room = button.dataset.room;
-    const url = `https://m.booking.naver.com/booking/10/bizes/585397/items/${id}?area=plt&lang=ko&map-search=1&service-target=map-pc&theme=place`;
+
+    const embedUrl =
+      `https://m.booking.naver.com/booking/10/bizes/585397/items/${id}?area=plt&lang=ko&map-search=1&service-target=map-pc&theme=place`;
+
+    const directUrl =
+      `https://booking.naver.com/booking/10/bizes/585397/items/${id}`;
 
     buttons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
+
     title.textContent = `${room} 예약`;
-    frame.src = url;
-    directLink.href = url;
+    frame.src = embedUrl;
+    directLink.href = directUrl;
+    continueBooking.href = directUrl;
   });
 });
 </script>
