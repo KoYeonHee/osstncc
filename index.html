@@ -50,6 +50,198 @@
       <div><b>⌖</b><span>오송역 인근<br>편리한 접근성</span></div>
     </div>
   </div>
+
+
+  <!-- 모바일에서도 본문 흐름 안에 표시되는 문의 배너 -->
+<!-- 회의실 예약 QR 배너 -->
+<style>
+.stn-reservation-qr {
+  position: fixed;
+  left: 16px;
+  right: auto;
+  top: calc(50% - 260px);
+  transform: none;
+  width: 200px;
+  z-index: 9998;
+  display: block;
+  line-height: 0;
+  border-radius: 16px;
+  transition: transform .2s ease, filter .2s ease;
+}
+.stn-reservation-qr:hover {
+  transform: scale(1.025);
+  filter: brightness(1.08);
+}
+.stn-reservation-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 16px;
+}
+@media (min-width: 601px) and (max-width: 1100px) {
+  .stn-reservation-qr {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .stn-reservation-qr {
+    display: block;
+    left: 10px;
+    right: auto;
+    top: auto;
+    bottom: 195px;
+    width: 125px;
+    transform: none;
+    z-index: 9998;
+  }
+  .stn-reservation-qr:hover {
+    transform: none;
+  }
+}
+</style>
+<a class="stn-reservation-qr"
+   href="/booking-test.html"
+   aria-label="회의실 예약 바로가기 - QR코드로 예약 페이지 열기">
+  <img src="qr-reservation-silver.png"
+       alt="회의실 예약 QR코드 - 스캔하여 예약 페이지로 이동">
+</a>
+<!-- 회의실 예약 QR 배너 끝 -->
+
+    <!-- 오송 Stn 카카오톡 빠른 문의 배너 -->
+<style>
+.stn-kakao-banner {
+  position: fixed;
+  left: 16px;
+  top: calc(50% + 10px);
+  transform: none;
+  width: 200px;
+  padding: 18px 14px;
+  background: linear-gradient(145deg, #171511, #050505);
+  border: 1px solid #c9a45c;
+  border-radius: 22px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  z-index: 9999;
+  box-sizing: border-box;
+}
+.stn-kakao-banner .stn-icon {
+  width: 48px;
+  height: 40px;
+  margin: 0 auto 9px;
+  color: #d9b76c;
+}
+.stn-kakao-banner .stn-name {
+  font-size: 15px;
+  letter-spacing: -.5px;
+  margin-bottom: 13px;
+}
+.stn-kakao-banner .stn-name span {
+  color: #d9b76c;
+}
+.stn-kakao-banner .stn-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a45c, transparent);
+  margin-bottom: 14px;
+}
+.stn-kakao-banner .stn-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #e4e0d8;
+  margin-bottom: 16px;
+}
+.stn-kakao-banner .stn-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 6px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #f5d98c, #c99b42);
+  color: #19140a;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(201,155,66,.25);
+  transition: .2s;
+}
+.stn-kakao-banner .stn-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.stn-kakao-banner .stn-button svg {
+  width: 18px;
+  height: 18px;
+}
+@media(max-width:600px) {
+  .stn-kakao-banner {
+    left: 10px;
+    bottom: 12px;
+    top: auto;
+    transform: none;
+    width: 175px;
+    padding: 12px;
+    border-radius: 17px;
+  }
+  .stn-kakao-banner .stn-icon {
+    width: 36px;
+    height: 30px;
+    margin-bottom: 6px;
+  }
+  .stn-kakao-banner .stn-name {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .stn-kakao-banner .stn-line {
+    margin-bottom: 8px;
+  }
+  .stn-kakao-banner .stn-desc {
+    font-size: 10px;
+    margin-bottom: 9px;
+  }
+  .stn-kakao-banner .stn-button {
+    font-size: 10px;
+    padding: 9px 4px;
+  }
+}
+</style>
+
+<div class="stn-kakao-banner">
+  <svg class="stn-icon" viewBox="0 0 64 52" fill="none">
+    <path d="M32 3C15 3 3 13 3 26c0 8 5 15 13 19l-3 7 14-5c2 .4 4 .6 6 .6 17 0 29-10 29-22S49 3 32 3Z"
+      fill="#D9B76C"/>
+    <text x="32" y="31" text-anchor="middle"
+      font-size="13" font-weight="bold" fill="#17130D">TALK</text>
+  </svg>
+
+  <div class="stn-name">
+    <span>오송 Stn</span> 컨퍼런스
+  </div>
+
+  <div class="stn-line"></div>
+
+  <div class="stn-desc">
+    회의실 예약 및 이용 문의를<br>
+    카카오톡으로 편하게<br>
+    상담하실 수 있습니다.
+  </div>
+
+  <a class="stn-button"
+     href="https://pf.kakao.com/_EPnWX/chat"
+     target="_blank"
+     rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 3C6.5 3 2 6.5 2 11c0 2.7 1.6 5.1 4.1 6.5L5 21l5-2.3c.7.2 1.3.3 2 .3 5.5 0 10-3.5 10-8s-4.5-8-10-8Z"
+        fill="#19140A"/>
+      <path d="M7 11h10M7 14h7" stroke="#EBCB78"
+        stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    카카오톡으로 문의하기
+    <span>›</span>
+  </a>
+</div>
+<!-- 카카오톡 배너 끝 -->
 </section>
 
 <section class="quick">
@@ -175,195 +367,28 @@
   </div>
 </footer>
 <script src="script.js"></script>
-    <!-- 오송 Stn 카카오톡 빠른 문의 배너 -->
+
+
+
 <style>
-.stn-kakao-banner {
-  position: fixed;
-  left: 16px;
-  top: calc(50% + 10px);
-  transform: none;
-  width: 200px;
-  padding: 18px 14px;
-  background: linear-gradient(145deg, #171511, #050505);
-  border: 3px solid #c9a45c;
-  border-radius: 22px;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,.3);
-  z-index: 9999;
-  box-sizing: border-box;
-}
-.stn-kakao-banner .stn-icon {
-  width: 48px;
-  height: 40px;
-  margin: 0 auto 9px;
-  color: #d9b76c;
-}
-.stn-kakao-banner .stn-name {
-  font-size: 15px;
-  letter-spacing: -.5px;
-  margin-bottom: 13px;
-}
-.stn-kakao-banner .stn-name span {
-  color: #d9b76c;
-}
-.stn-kakao-banner .stn-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a45c, transparent);
-  margin-bottom: 14px;
-}
-.stn-kakao-banner .stn-desc {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #e4e0d8;
-  margin-bottom: 16px;
-}
-.stn-kakao-banner .stn-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 11px 6px;
-  border-radius: 40px;
-  background: linear-gradient(135deg, #f5d98c, #c99b42);
-  color: #19140a;
-  font-size: 12px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 3px 12px rgba(201,155,66,.25);
-  transition: .2s;
-}
-.stn-kakao-banner .stn-button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08);
-}
-.stn-kakao-banner .stn-button svg {
-  width: 18px;
-  height: 18px;
-}
-@media(max-width:600px) {
-  .stn-kakao-banner {
-    left: 10px;
-    bottom: 12px;
-    top: auto;
-    transform: none;
-    width: 175px;
-    padding: 12px;
-    border-radius: 17px;
-  }
-  .stn-kakao-banner .stn-icon {
-    width: 36px;
-    height: 30px;
-    margin-bottom: 6px;
-  }
-  .stn-kakao-banner .stn-name {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  .stn-kakao-banner .stn-line {
-    margin-bottom: 8px;
-  }
-  .stn-kakao-banner .stn-desc {
-    font-size: 10px;
-    margin-bottom: 9px;
-  }
-  .stn-kakao-banner .stn-button {
-    font-size: 10px;
-    padding: 9px 4px;
-  }
-}
-</style>
-
-<div class="stn-kakao-banner">
-  <svg class="stn-icon" viewBox="0 0 64 52" fill="none">
-    <path d="M32 3C15 3 3 13 3 26c0 8 5 15 13 19l-3 7 14-5c2 .4 4 .6 6 .6 17 0 29-10 29-22S49 3 32 3Z"
-      fill="#D9B76C"/>
-    <text x="32" y="31" text-anchor="middle"
-      font-size="13" font-weight="bold" fill="#17130D">TALK</text>
-  </svg>
-
-  <div class="stn-name">
-    <span>오송 Stn</span> 컨퍼런스
-  </div>
-
-  <div class="stn-line"></div>
-
-  <div class="stn-desc">
-    회의실 예약 및 이용 문의를<br>
-    카카오톡으로 편하게<br>
-    상담하실 수 있습니다.
-  </div>
-
-  <a class="stn-button"
-     href="https://pf.kakao.com/_EPnWX/chat"
-     target="_blank"
-     rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24" fill="none">
-      <path d="M12 3C6.5 3 2 6.5 2 11c0 2.7 1.6 5.1 4.1 6.5L5 21l5-2.3c.7.2 1.3.3 2 .3 5.5 0 10-3.5 10-8s-4.5-8-10-8Z"
-        fill="#19140A"/>
-      <path d="M7 11h10M7 14h7" stroke="#EBCB78"
-        stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-    카카오톡으로 문의하기
-    <span>›</span>
-  </a>
-</div>
-<!-- 카카오톡 배너 끝 -->
-
-<!-- 회의실 예약 QR 배너 -->
-<style>
-.stn-reservation-qr {
-  position: fixed;
-  left: 16px;
-  right: auto;
-  top: calc(50% - 260px);
-  transform: none;
-  width: 200px;
-  z-index: 9998;
-  display: block;
-  line-height: 0;
-  border-radius: 16px;
-  transition: transform .2s ease, filter .2s ease;
-}
-.stn-reservation-qr:hover {
-  transform: scale(1.025);
-  filter: brightness(1.08);
-}
-.stn-reservation-qr img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 0;
-  border-radius: 16px;
-}
-@media (min-width: 601px) and (max-width: 1100px) {
-  .stn-reservation-qr {
-    display: none;
-  }
-}
 @media (max-width: 600px) {
+  /* 모바일에서는 배너를 화면에 고정하지 않고 메인 영역 안에 배치 */
   .stn-reservation-qr {
-    display: block;
-    left: 10px;
-    right: auto;
-    top: auto;
-    bottom: 195px;
-    width: 125px;
-    transform: none;
-    z-index: 9998;
+    position: static !important;
+    display: block !important;
+    width: 125px !important;
+    margin: 26px 0 14px !important;
+    transform: none !important;
   }
-  .stn-reservation-qr:hover {
-    transform: none;
+  .stn-kakao-banner {
+    position: static !important;
+    display: block !important;
+    width: 175px !important;
+    margin: 0 0 24px !important;
+    transform: none !important;
   }
 }
 </style>
-<a class="stn-reservation-qr"
-   href="/booking-test.html"
-   aria-label="회의실 예약 바로가기 - QR코드로 예약 페이지 열기">
-  <img src="qr-reservation-silver.png"
-       alt="회의실 예약 QR코드 - 스캔하여 예약 페이지로 이동">
-</a>
-<!-- 회의실 예약 QR 배너 끝 -->
 
 </body>
 </html>
