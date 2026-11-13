@@ -643,3 +643,9 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .stn-kakao-banner .stn-button svg { width:12px !important; height:12px !important; }
   .stn-banner-close { width:21px !important; height:21px !important; font-size:16px !important; line-height:18px !important; }
 }
+
+/* Room detail gallery: show both 203호 angles together */
+.modal-gallery{display:grid;grid-template-columns:1fr;gap:12px}
+.modal-image-secondary[hidden]{display:none}
+@media(min-width:760px){.modal-gallery:has(.modal-image-secondary:not([hidden])){grid-template-columns:1fr 1fr;align-items:start}}
+.modal-gallery .modal-image{width:100%;height:auto;object-fit:contain}

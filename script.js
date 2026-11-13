@@ -8,9 +8,16 @@ document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{
 
 const roomModal=document.getElementById('roomModal');
 const modalImage=document.getElementById('modalImage');
+const modalImage2=document.getElementById('modalImage2');
 const modalTitle=document.getElementById('modalTitle');
-function openRoom(n){ modalImage.src=`images/${n}호.webp`; modalImage.alt=`${n}호 회의실 상세 안내`; modalTitle.textContent=`${n}호 회의실`; roomModal.classList.add('open'); roomModal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); }
-function closeRoom(){ roomModal.classList.remove('open'); roomModal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); modalImage.src=''; }
+function openRoom(n){
+  modalImage.src=`images/${n}호.webp`; modalImage.alt=`${n}호 회의실 상세 안내`;
+  modalImage2.hidden = n !== '203';
+  modalImage2.src = n === '203' ? 'images/203호-2.webp' : '';
+  modalTitle.textContent=`${n}호 회의실`;
+  roomModal.classList.add('open'); roomModal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open');
+}
+function closeRoom(){ roomModal.classList.remove('open'); roomModal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); modalImage.src=''; modalImage2.src=''; modalImage2.hidden=true; }
 document.querySelectorAll('.room-card').forEach(card=>{card.addEventListener('click',()=>openRoom(card.dataset.room));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ') {e.preventDefault();openRoom(card.dataset.room)}})});
 
 // 이용요금/회의실 구조 이미지 클릭 시 큰 화면으로 열기
@@ -59,7 +66,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRoom();});
   }
   function startAuto() {
     stopAuto();
-    if (!reducedMotion) timer = window.setInterval(() => showSlide(current + 1), 5000);
+    if (!reducedMotion) timer = window.setInterval(() => showSlide(current + 1), 3000);
   }
 
   dots.forEach(dot => dot.addEventListener('click', () => {
