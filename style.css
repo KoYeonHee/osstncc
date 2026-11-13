@@ -466,7 +466,7 @@ td,th { padding:14px 12px; }
 .btn:hover { filter:brightness(1.08); transform:translateY(-2px); }
 footer { border-top:1px solid rgba(216,182,106,.25); }
 .stn-kakao-banner {
-  left:auto !important; right:18px !important; top:auto !important; bottom:18px !important;
+  left:18px !important; right:auto !important; top:auto !important; bottom:215px !important;
   width:178px !important; padding:13px !important;
   border-width:1px !important; border-radius:8px !important;
   box-shadow:0 12px 34px #0005 !important;
@@ -510,7 +510,7 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .section { padding-top:62px; padding-bottom:62px; }
   .section-title h2 { font-size:26px; }
   .room-card .photo { height:220px; }
-  .stn-kakao-banner { right:10px !important; bottom:12px !important; width:158px !important; }
+  .stn-kakao-banner { left:10px !important; right:auto !important; bottom:12px !important; width:158px !important; }
   .stn-reservation-qr { display:none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
