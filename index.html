@@ -29,7 +29,16 @@
 </header>
 
 <main id="home">
-<section class="hero">
+<section class="hero" aria-label="오송 Stn 컨퍼런스 메인 소개">
+  <div class="hero-slider" aria-hidden="true">
+    <div class="hero-slide is-active" data-room-label="Stn - 201호"><img src="images/201호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 202호"><img src="images/202호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 203호"><img src="images/203호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 204호"><img src="images/204호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 205호"><img src="images/205호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 206호"><img src="images/206호.webp" alt=""></div>
+    <div class="hero-slide" data-room-label="Stn - 207호"><img src="images/207호.webp" alt=""></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <p class="eyebrow">OSONG STN CONFERENCE</p>
@@ -49,10 +58,20 @@
       <div><b>☕</b><span>휴게공간<br>음료 및 다과 별도</span></div>
       <div><b>⌖</b><span>오송역 인근<br>편리한 접근성</span></div>
     </div>
+    <div class="hero-slider-controls" aria-label="메인 사진 선택">
+      <button class="hero-prev" type="button" aria-label="이전 사진">‹</button>
+      <div class="hero-dots">
+        <button class="hero-dot is-active" type="button" aria-label="1번 사진 보기" data-slide="0"></button>
+        <button class="hero-dot" type="button" aria-label="2번 사진 보기" data-slide="1"></button>
+        <button class="hero-dot" type="button" aria-label="3번 사진 보기" data-slide="2"></button>
+        <button class="hero-dot" type="button" aria-label="4번 사진 보기" data-slide="3"></button>
+        <button class="hero-dot" type="button" aria-label="5번 사진 보기" data-slide="4"></button>
+        <button class="hero-dot" type="button" aria-label="6번 사진 보기" data-slide="5"></button>
+        <button class="hero-dot" type="button" aria-label="7번 사진 보기" data-slide="6"></button>
+      </div>
+      <button class="hero-next" type="button" aria-label="다음 사진">›</button>
+    </div>
   </div>
-
-
-
 </section>
 
   <!-- QR 및 카카오톡 문의 배너: 모바일은 메인 영역 아래에 자연스럽게 배치 -->
@@ -265,13 +284,13 @@
 <section id="rooms" class="section">
   <div class="section-title"><h2>회의실 안내</h2><p>목적에 맞는 최적의 공간을 만나보세요.</p></div>
   <div class="room-grid">
-    <article class="room-card" data-room="201" tabindex="0" role="button" aria-label="201호 상세보기"><div class="photo"><img src="images/201호.png" alt="201호 회의실 안내"></div><div><strong>201호</strong><span>24인실</span></div></article>
-    <article class="room-card" data-room="202" tabindex="0" role="button" aria-label="202호 상세보기"><div class="photo"><img src="images/202호.png" alt="202호 회의실 안내"></div><div><strong>202호</strong><span>8인실</span></div></article>
-    <article class="room-card" data-room="203" tabindex="0" role="button" aria-label="203호 상세보기"><div class="photo"><img src="images/203호.png" alt="203호 회의실 안내"></div><div><strong>203호</strong><span>16인실</span></div></article>
-    <article class="room-card" data-room="204" tabindex="0" role="button" aria-label="204호 상세보기"><div class="photo"><img src="images/204호.png" alt="204호 회의실 안내"></div><div><strong>204호</strong><span>20인실</span></div></article>
-    <article class="room-card" data-room="205" tabindex="0" role="button" aria-label="205호 상세보기"><div class="photo"><img src="images/205호.png" alt="205호 회의실 안내"></div><div><strong>205호</strong><span>12인실</span></div></article>
-    <article class="room-card" data-room="206" tabindex="0" role="button" aria-label="206호 상세보기"><div class="photo"><img src="images/206호.png" alt="206호 회의실 안내"></div><div><strong>206호</strong><span>16인실</span></div></article>
-    <article class="room-card" data-room="207" tabindex="0" role="button" aria-label="207호 상세보기"><div class="photo"><img src="images/207호.png" alt="207호 회의실 안내"></div><div><strong>207호</strong><span>10~20인</span></div></article>
+    <article class="room-card" data-room="201" tabindex="0" role="button" aria-label="201호 상세보기"><div class="photo" data-room-label="Stn - 201호"><img src="images/201호.webp" alt="201호 회의실 안내"></div><div><strong>201호</strong><span>24인실</span></div></article>
+    <article class="room-card" data-room="202" tabindex="0" role="button" aria-label="202호 상세보기"><div class="photo" data-room-label="Stn - 202호"><img src="images/202호.webp" alt="202호 회의실 안내"></div><div><strong>202호</strong><span>8인실</span></div></article>
+    <article class="room-card" data-room="203" tabindex="0" role="button" aria-label="203호 상세보기"><div class="photo" data-room-label="Stn - 203호"><img src="images/203호.webp" alt="203호 회의실 안내"></div><div><strong>203호</strong><span>16인실</span></div></article>
+    <article class="room-card" data-room="204" tabindex="0" role="button" aria-label="204호 상세보기"><div class="photo" data-room-label="Stn - 204호"><img src="images/204호.webp" alt="204호 회의실 안내"></div><div><strong>204호</strong><span>20인실</span></div></article>
+    <article class="room-card" data-room="205" tabindex="0" role="button" aria-label="205호 상세보기"><div class="photo" data-room-label="Stn - 205호"><img src="images/205호.webp" alt="205호 회의실 안내"></div><div><strong>205호</strong><span>12인실</span></div></article>
+    <article class="room-card" data-room="206" tabindex="0" role="button" aria-label="206호 상세보기"><div class="photo" data-room-label="Stn - 206호"><img src="images/206호.webp" alt="206호 회의실 안내"></div><div><strong>206호</strong><span>16인실</span></div></article>
+    <article class="room-card" data-room="207" tabindex="0" role="button" aria-label="207호 상세보기"><div class="photo" data-room-label="Stn - 207호"><img src="images/207호.webp" alt="207호 회의실 안내"></div><div><strong>207호</strong><span>10~20인</span></div></article>
   </div>
 </section>
 
@@ -295,7 +314,7 @@
     <div class="notice">
       <h3>이용 안내</h3>
       <p>●  <b>사전 예약 필수</b> (최소 3일 전)</p>
-      <p>●  <b>최소 2시간 기본 예약 필수</p>
+      <p>●  <b>최소 2시간 기본 예약 필수</b></p>
       <p>●  카드결제 / 세금계산서 / 나라빌 가능</p>
       <p>●  음료 및 다과 별도 (사전 예약 필수)</p>
       <p>● 주말 및 공휴일 이용 가능 (별도 문의)</p>
@@ -352,7 +371,7 @@
     <a class="contact-phone" href="tel:01046464633">010-4646-4633</a>
     <div class="contact-buttons">
       <a href="tel:01046464633" class="btn gold">전화 문의</a>
-      <a href="#" class="btn naver">네이버 톡톡</a>
+      <a href="https://talk.naver.com/W7R30C9" target="_blank" rel="noopener noreferrer" class="btn naver">네이버 톡톡</a>
       <a href="/booking-test.html" class="btn outline-light">예약 문의</a>
     </div>
   </div>
