@@ -747,3 +747,73 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width:53px !important; height:53px !important; }
   .hero-inner .hero-buttons.stn-quick-links .stn-quick-label { font-size:13px !important; }
 }
+
+
+/* 2026-11 quick links: transparent glassmorphism, icon + label only */
+.hero-inner .hero-buttons.stn-quick-links {
+  gap: clamp(14px, 2vw, 26px) !important;
+  margin-top: 28px !important;
+  align-items: center !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 12px 10px !important;
+  gap: 9px !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  background: rgba(24, 24, 24, .22) !important;
+  -webkit-backdrop-filter: blur(9px) saturate(115%);
+  backdrop-filter: blur(9px) saturate(115%);
+  box-shadow: none !important;
+  color: #f7edda !important;
+  transition: background .22s ease, transform .22s ease, filter .22s ease;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card:hover,
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card:focus-visible {
+  border: 0 !important;
+  background: rgba(24, 24, 24, .34) !important;
+  box-shadow: none !important;
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+  outline: none;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-icon {
+  width: 64px !important;
+  height: 64px !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-icon svg {
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,.25));
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-label {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+  color: #fff2d2 !important;
+  background: none !important;
+  -webkit-text-fill-color: #fff2d2 !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.65), 0 0 10px rgba(0,0,0,.3) !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-rule,
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-arrow {
+  display: none !important;
+}
+@media(max-width:900px) {
+  .hero-inner .hero-buttons.stn-quick-links { gap: 10px !important; }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width: 56px !important; height: 56px !important; }
+}
+@media(max-width:600px) {
+  .hero-inner .hero-buttons.stn-quick-links {
+    width: min(100%, 310px) !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+  }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-card {
+    min-height: 0 !important;
+    padding: 10px 6px !important;
+    border-radius: 12px !important;
+    gap: 6px !important;
+  }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width: 50px !important; height: 50px !important; }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-label { font-size: 13px !important; }
+}
