@@ -12,6 +12,24 @@ const modalTitle=document.getElementById('modalTitle');
 function openRoom(n){ modalImage.src=`images/${n}호.webp`; modalImage.alt=`${n}호 회의실 상세 안내`; modalTitle.textContent=`${n}호 회의실`; roomModal.classList.add('open'); roomModal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); }
 function closeRoom(){ roomModal.classList.remove('open'); roomModal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); modalImage.src=''; }
 document.querySelectorAll('.room-card').forEach(card=>{card.addEventListener('click',()=>openRoom(card.dataset.room));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ') {e.preventDefault();openRoom(card.dataset.room)}})});
+
+// 이용요금/회의실 구조 이미지 클릭 시 큰 화면으로 열기
+function openPriceRoom(n) {
+  modalImage.src=`images/price-${n}.webp`;
+  modalImage.alt=`${n}호 이용요금 및 회의실 구조 안내`;
+  modalTitle.textContent=`${n}호 이용요금 및 회의실 구조 안내`;
+  roomModal.classList.add('open');
+  roomModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+document.querySelectorAll('.price-room-card').forEach(card=>{
+  const open=()=>openPriceRoom(card.dataset.priceRoom);
+  card.addEventListener('click',open);
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}
+  });
+});
+
 roomModal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeRoom));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRoom();});
 

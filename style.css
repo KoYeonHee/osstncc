@@ -605,3 +605,12 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .price-room-gallery figcaption { padding:8px 9px; font-size:13px; }
   .price-room-gallery figcaption::after { font-size:9px; }
 }
+
+
+/* 이용요금 및 회의실 구조 안내: 클릭하면 원본 비율로 크게 보기 */
+.price-room-card { cursor: zoom-in; }
+.price-room-card:focus-visible { outline: 3px solid #c9a45c; outline-offset: 3px; }
+.price-room-card img { object-fit:contain; }
+.price-room-card:hover img { filter:brightness(1.035); }
+#roomModal .room-modal-box { width:min(1100px,94vw); max-height:94vh; }
+#roomModal .modal-image { width:100%; height:auto; max-height:none; object-fit:contain; }
