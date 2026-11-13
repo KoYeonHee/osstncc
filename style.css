@@ -817,3 +817,105 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width: 50px !important; height: 50px !important; }
   .hero-inner .hero-buttons.stn-quick-links .stn-quick-label { font-size: 13px !important; }
 }
+
+/* 2026-11-13: clean quick links — no card, glass, border, underline or arrow */
+.hero-inner .hero-buttons.stn-quick-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: clamp(22px, 3vw, 42px) !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin-top: 28px !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  width: auto !important;
+  min-width: 82px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 4px 2px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  color: #fff3d5 !important;
+  text-decoration: none !important;
+  transition: transform .2s ease, filter .2s ease !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card:hover,
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-card:focus-visible {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translateY(-3px) !important;
+  filter: brightness(1.12) !important;
+  outline: none !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-icon {
+  display: flex !important;
+  width: 62px !important;
+  height: 62px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,.42)) !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-label {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff1cf !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #fff1cf !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  letter-spacing: -.35px !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.9), 0 0 9px rgba(0,0,0,.55) !important;
+}
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-rule,
+.hero-inner .hero-buttons.stn-quick-links .stn-quick-arrow {
+  display: none !important;
+}
+@media(max-width:900px) {
+  .hero-inner .hero-buttons.stn-quick-links { gap: 22px !important; }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width: 56px !important; height: 56px !important; }
+}
+@media(max-width:600px) {
+  .hero-inner .hero-buttons.stn-quick-links {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px 8px !important;
+    width: min(100%, 360px) !important;
+    margin-top: 20px !important;
+  }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-card { min-width: 0 !important; padding: 2px 0 !important; gap: 6px !important; }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-icon { width: 44px !important; height: 44px !important; }
+  .hero-inner .hero-buttons.stn-quick-links .stn-quick-label { font-size: 11px !important; white-space: nowrap !important; }
+}
+
+
+/* Floating Kakao and reservation QR banners: move both upward together */
+@media (min-width:601px) {
+  .stn-reservation-qr { bottom:123px !important; }
+  .stn-kakao-banner { bottom:366px !important; }
+}
+@media (max-width:600px) {
+  .stn-reservation-qr { bottom:102px !important; }
+  .stn-kakao-banner { bottom:279px !important; }
+}
