@@ -79,3 +79,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRoom();});
   showSlide(0);
   startAuto();
 })();
+
+// Floating banners can be dismissed independently; they reappear on page refresh.
+document.querySelectorAll('.stn-banner-close').forEach(button=>{
+  button.addEventListener('click',event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    const banner=button.closest('.stn-kakao-banner, .stn-reservation-qr');
+    if(banner) banner.style.setProperty('display','none','important');
+  });
+});

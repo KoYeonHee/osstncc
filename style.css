@@ -539,7 +539,7 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
 .stn-reservation-qr {
   position:fixed !important;
   left:18px !important; right:auto !important; top:auto !important;
-  bottom:18px !important;
+  bottom:73px !important;
   width:178px !important; height:231px !important;
   display:block !important;
   border:0 !important; border-radius:12px !important;
@@ -553,7 +553,7 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
 .stn-kakao-banner {
   position:fixed !important;
   left:18px !important; right:auto !important; top:auto !important;
-  bottom:261px !important;
+  bottom:316px !important;
   width:178px !important; height:231px !important;
   padding:9px 10px !important;
   display:flex !important; flex-direction:column !important;
@@ -598,8 +598,8 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .price-room-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:600px) {
-  .stn-reservation-qr { left:10px !important; bottom:12px !important; width:178px !important; height:231px !important; }
-  .stn-kakao-banner { left:10px !important; bottom:255px !important; width:178px !important; height:231px !important; }
+  .stn-reservation-qr { left:10px !important; bottom:67px !important; width:178px !important; height:231px !important; }
+  .stn-kakao-banner { left:10px !important; bottom:310px !important; width:178px !important; height:231px !important; }
   .price-room-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
   .price-room-gallery figure { border-radius:7px; }
   .price-room-gallery figcaption { padding:8px 9px; font-size:13px; }
@@ -614,3 +614,32 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
 .price-room-card:hover img { filter:brightness(1.035); }
 #roomModal .room-modal-box { width:min(1100px,94vw); max-height:94vh; }
 #roomModal .modal-image { width:100%; height:auto; max-height:none; object-fit:contain; }
+
+/* Floating banner close controls */
+.stn-reservation-qr,.stn-kakao-banner { position:fixed !important; }
+.stn-banner-close {
+  position:absolute !important; top:6px !important; right:6px !important;
+  z-index:10001 !important; width:25px !important; height:25px !important;
+  padding:0 !important; border:1px solid #c9a45c !important; border-radius:50% !important;
+  background:rgba(15,15,15,.88) !important; color:#f2d28c !important;
+  font:700 19px/22px Arial,sans-serif !important; text-align:center !important;
+  cursor:pointer !important; box-shadow:0 2px 8px #0006 !important;
+}
+.stn-reservation-qr .stn-banner-close { top:6px !important; right:6px !important; }
+@media (max-width:600px) {
+  .stn-reservation-qr {
+    left:10px !important; bottom:67px !important;
+    width:126px !important; height:164px !important;
+  }
+  .stn-kakao-banner {
+    left:10px !important; bottom:244px !important;
+    width:126px !important; height:164px !important;
+    padding:8px 7px !important;
+  }
+  .stn-kakao-banner .stn-icon { width:27px !important; height:22px !important; margin-bottom:3px !important; }
+  .stn-kakao-banner .stn-name { font-size:10px !important; margin-bottom:4px !important; }
+  .stn-kakao-banner .stn-desc { font-size:8px !important; line-height:1.35 !important; margin-bottom:5px !important; }
+  .stn-kakao-banner .stn-button { min-height:27px !important; padding:4px 3px !important; font-size:8px !important; }
+  .stn-kakao-banner .stn-button svg { width:12px !important; height:12px !important; }
+  .stn-banner-close { width:21px !important; height:21px !important; font-size:16px !important; line-height:18px !important; }
+}
