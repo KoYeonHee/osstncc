@@ -919,3 +919,13 @@ footer { border-top:1px solid rgba(216,182,106,.25); }
   .stn-reservation-qr { bottom:102px !important; }
   .stn-kakao-banner { bottom:279px !important; }
 }
+
+
+/* Footer bank account layout */
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:48px}
+.footer-company{flex:1;min-width:0}
+.footer-bank{flex:0 0 43%;padding:8px 0 8px 48px;border-left:1px solid rgba(213,173,97,.45);color:#eee}
+.footer-bank p{font-size:23px!important;line-height:1.55;margin:5px 0!important;font-weight:700;letter-spacing:-.4px}
+.footer-bank strong{color:#d5ad61;font-weight:700}
+@media(max-width:900px){.footer-inner{align-items:flex-start;flex-direction:column;gap:22px}.footer-bank{width:100%;flex:auto;padding:18px 0 0;border-left:0;border-top:1px solid rgba(213,173,97,.35)}.footer-bank p{font-size:20px!important}}
+@media(max-width:600px){.footer-bank p{font-size:18px!important;line-height:1.6}}
